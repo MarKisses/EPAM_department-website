@@ -197,12 +197,11 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const response = await fetch('/api/verify-email', {
-            method: 'POST',
+        const response = await fetch(`/api/verify-email/${formValues.email}`, {
+            method: 'GET',
             headers: {
                 'Content-type': 'application/json',
             },
-            body: JSON.stringify({ email: formValues.email }),
         })
         const emailExists = await response.json()
 
