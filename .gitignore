@@ -221,3 +221,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,jetbrains+all,visualstudiocode,nextjs
 nextjs-app/build.tar.gz
 nextjs-app/ecosystem.config.js
+
+# Python virtual environment
+.venv

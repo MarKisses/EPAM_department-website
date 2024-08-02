@@ -6,9 +6,7 @@ const verifalia = new VerifaliaRestClient({
     password: process.env.VERIFALIA_PASS,
 })
 
-export async function POST(request) {
-    const data = await request.json()
-    const { email } = data
+export async function GET(request, { params: { email } }) {
 
     if (!email) {
         return NextResponse.json(
