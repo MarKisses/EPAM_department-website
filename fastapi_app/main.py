@@ -5,15 +5,6 @@ from fastapi_app.routers import auth, paper
 
 app = FastAPI()
 
-
-@app.get("/")
-async def get_zalupa():
-    return {"fuck": "shit!"}
-
-@app.get("/xuy")
-async def get_xuy():
-    return {"fuck": "shit!"}
-
 app.include_router(paper.router)
 app.include_router(auth.router)
 
