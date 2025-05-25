@@ -56,12 +56,10 @@ async def create_user(
     # ! Not just email uniqness
     existing = await authenticate_user(db, user_in.email, user_in.password)
     if existing:
-        print(existing)
         raise HTTPException(status_code=400, detail="User already exists")
     success = await register_user(db, user_in)
     if not success:
-        raise HTTPException(401, detail="Something got wrong")
-    return {"status_code": status.HTTP_201_CREATED, "transaction": "Successful"}
+        raise HTTPException(401, detail="Registration failed due to an unexpected error")
 
 
 @router.get("/me")
