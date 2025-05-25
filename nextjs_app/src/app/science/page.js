@@ -19,7 +19,7 @@ import Link from 'next/link'
 
 const getPublications = async () => {
     const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/db/books/list`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/papers`,
         { next: { revalidate: 60 } }
     )
 
